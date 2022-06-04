@@ -18,9 +18,13 @@ app.signal_connect "activate" do |application|
 
     c_entry = Gtk::Entry.new
     grid.attach(c_entry, 0, 0, 2, 1)
+    c_label = Gtk::Label.new('℃')
+    grid.attach(c_label, 3, 0, 1, 1)
 
     f_entry = Gtk::Entry.new
     grid.attach(f_entry, 0, 2, 2, 1)
+    f_label = Gtk::Label.new('℉')
+    grid.attach(f_label, 3, 2, 1, 1)
 
     button = Gtk::Button.new(:label => "↓", :id => "Button 1")
     button.signal_connect("clicked") {
