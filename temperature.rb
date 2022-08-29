@@ -40,10 +40,14 @@ class Temperature < Object
 
     def to_k
         result = nil
-        if self.unit == :C
-            result = Temperature.new(self.value + 
-                Temperature::ABSOLUTE_ZERO.value, :K)
+        if @unit == :K
+            result = self
+        elsif self.unit == :C
+            temp = (self.value - 
+                 Temperature::ABSOLUTE_ZERO.value).round(2)
+            result = Temperature.new(temp, :K)
         end
+        result
     end
 
     ABS_Z_F = ABSOLUTE_ZERO.to_f

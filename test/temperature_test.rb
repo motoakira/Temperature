@@ -1,4 +1,3 @@
-#require 'RSpec'
 require_relative '../temperature'
 
 RSpec.describe Temperature do
@@ -92,6 +91,37 @@ RSpec.describe Temperature do
             sample = Temperature.new(212.0, :F)
             temp = Temperature.new(100.0, :C)
             expect(sample.to_c).to eq(temp)
+        end
+    end
+    describe "#to_k" do
+        it "should do nothing if struct is already in K" do
+            sample = Temperature.new(0, :K)
+            expect(sample.to_k).to eq(sample)
+        end
+        it "should be 0.0K when -273.15℃" do
+            sample = Temperature.new(-273.15, :C)
+            temp = Temperature.new(0.0, :K)
+            expect(sample.to_k).to eq(temp)
+        end
+        it "should be 233.15K when -40.0℃" do
+            sample = Temperature.new(-40.0, :C)
+            temp = Temperature.new(233.15, :K)
+            expect(sample.to_k).to eq(temp)
+        end
+        it "should be 273.15K when 0.0℃" do
+            sample = Temperature.new(0.0, :C)
+            temp = Temperature.new(273.15, :K)
+            expect(sample.to_k).to eq(temp)
+        end
+        it "should be 310.93K when 37.78℃" do
+            sample = Temperature.new(37.78, :C)
+            temp = Temperature.new(310.93, :K)
+            expect(sample.to_k).to eq(temp)
+        end
+        it "should be 373.15K when 100.0℃" do
+            sample = Temperature.new(100.0, :C)
+            temp = Temperature.new(373.15, :K)
+            expect(sample.to_k).to eq(temp)
         end
     end
 end
