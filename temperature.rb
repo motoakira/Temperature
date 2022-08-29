@@ -5,8 +5,8 @@ class Temperature < Object
     MSG_LESS_THAN_ZERO = "絶対零度より低温になってしまいます。"
 
     attr_accessor :value, :unit
+
     def initialize(val, u)
-        
         @value = val
         @unit = u
         return self
@@ -20,7 +20,8 @@ class Temperature < Object
         elsif self.unit != 'F'
             result = nil
         else
-            result = Temperature.new(5 * (self.value - 32) / 9, 'C')
+            temp = (5 * (self.value - 32) / 9).round(2)
+            result = Temperature.new(temp, 'C')
         end
         return result
     end
@@ -31,7 +32,8 @@ class Temperature < Object
         elsif self.unit != 'C'
             result = nil
         else
-            result = Temperature.new(9 * (self.value + 32) / 5, 'C')
+            temp = (9 * self.value / 5 + 32).round(2)
+            result = Temperature.new(temp, 'F')
         end
         return result
      end
