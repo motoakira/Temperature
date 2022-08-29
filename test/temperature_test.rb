@@ -40,27 +40,27 @@ RSpec.describe Temperature do
         it "should be -459.67℉ when -273.15℃" do
             sample = Temperature.new(-273.15, 'C')
             temp = Temperature.new(-459.67, 'F')
-            expect(sample.to_f.value).to eq(temp.value)
+            expect(sample.to_f).to eq(temp)
         end
         it "should be -40.0℉ when -40.0℃" do
             sample = Temperature.new(-40.0, 'C')
             temp = Temperature.new(-40.0, 'F')
-            expect(sample.to_f.value).to eq(temp.value)
+            expect(sample.to_f).to eq(temp)
         end
         it "should be 32.0℉ when 0.0℃" do
             sample = Temperature.new(0.0, 'C')
             temp = Temperature.new(32.0, 'F')
-            expect(sample.to_f.value).to eq(temp.value)
+            expect(sample.to_f).to eq(temp)
         end
         it "should be 100.0℉ when 37.78℃" do
             sample = Temperature.new(37.78, 'C')
             temp = Temperature.new(100.0, 'F')
-            expect(sample.to_f.value).to eq(temp.value)
+            expect(sample.to_f).to eq(temp)
         end
         it "should be 212.0℉ when 100.0℃" do
             sample = Temperature.new(100.0, 'C')
             temp = Temperature.new(212.0, 'F')
-            expect(sample.to_f.value).to eq(temp.value)
+            expect(sample.to_f).to eq(temp)
         end
     end
     describe "#to_c" do
@@ -71,27 +71,27 @@ RSpec.describe Temperature do
         it "should be -273.15℃ when -459.67°F" do
             sample = Temperature.new(-459.67, 'F')
             temp = Temperature.new(-273.15, 'C')
-            expect(sample.to_c.value).to eq(temp.value)
+            expect(sample.to_c).to eq(temp)
         end
         it "should be -40.0℃ when -40.0°F" do
             sample = Temperature.new(-40.0, 'F')
             temp = Temperature.new(-40.0, 'C')
-            expect(sample.to_c.value).to eq(temp.value)
+            expect(sample.to_c).to eq(temp)
         end
         it "should be -17.78℃ when 0.0°F" do
             sample = Temperature.new(0.0, 'F')
             temp = Temperature.new(-17.78, 'C')
-            expect(sample.to_c.value).to eq(temp.value)
+            expect(sample.to_c).to eq(temp)
         end
         it "should be 37.78℃ when 100.0℉" do
             sample = Temperature.new(100.0, 'F')
             temp = Temperature.new(37.78, 'C')
-            expect(sample.to_c.value).to eq(temp.value)
+            expect(sample.to_c).to eq(temp)
         end
         it "should be 100.0℃ when 212.0℉" do
             sample = Temperature.new(212.0, 'F')
             temp = Temperature.new(100.0, 'C')
-            expect(sample.to_c.value).to eq(temp.value)
+            expect(sample.to_c).to eq(temp)
         end
     end
 end

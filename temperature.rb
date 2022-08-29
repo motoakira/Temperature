@@ -63,4 +63,9 @@ class Temperature < Object
         
         return self
     end
+
+    def ==(r)
+        @unit == r.unit &&
+        @value == r.value
+    end
 end
