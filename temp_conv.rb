@@ -2,11 +2,15 @@
 
 require 'gtk3'
 
-app = Gtk::Application.new("info.rulie", :flags_none)
+require_relative 'setup_builder'
 
-app.signal_connect "activate" do |application|
+setup_builder()
+
+=begin
+    app.signal_connect "activate" do |application|
 # create a new window, and set its title
-    window = Gtk::ApplicationWindow.new(application)
+
+window = Gtk::ApplicationWindow.new(application)
     window.set_title("Temperature Converter")
     window.set_border_width(10)
 
@@ -56,7 +60,9 @@ app.signal_connect "activate" do |application|
 # that are contained in the window, directly or indirectly
     window.show_all
 end
+=end
 
-status = app.run([$0] + ARGV)
+#status = app.run([$0] + ARGV)
+status = Gtk.main
 
 puts status

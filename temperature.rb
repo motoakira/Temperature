@@ -14,7 +14,7 @@ class Temperature < Object
 
     ABSOLUTE_ZERO = Temperature.new(-273.15, :C)
 
-    def to_c
+    def to_celsius
         if self.unit == :C
             result = self
         elsif self.unit != :F
@@ -26,7 +26,7 @@ class Temperature < Object
         return result
     end
 
-    def to_f
+    def to_fahrenheit
         if self.unit == :F
             result = self
         elsif self.unit != :C
@@ -38,7 +38,7 @@ class Temperature < Object
         return result
      end
 
-    def to_k
+    def to_kelvin
         result = nil
         if @unit == :K
             result = self
@@ -50,7 +50,7 @@ class Temperature < Object
         result
     end
 
-    ABS_Z_F = ABSOLUTE_ZERO.to_f
+    ABS_Z_F = ABSOLUTE_ZERO.to_fahrenheit
 
     def validate!
         if self.unit == :F
