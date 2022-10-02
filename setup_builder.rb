@@ -36,27 +36,39 @@ def setup_builder
     @f_entry = builder.get_object("fahrenheit")
     @k_entry = builder.get_object("kelvin")
 
+    @text_area = builder.get_object("text_area")
+
     window.show_all
 end
 
 def ctof
     c_temp = Temperature.new(@c_entry.text.to_f, :C)
-    c_temp.validate!
-    f_temp = c_temp.to_fahrenheit
-    f_temp.validate!
-    @f_entry.text = f_temp.value.to_s
-    k_temp = c_temp.to_kelvin
-    k_temp.validate!
-    @k_entry.text = k_temp.value.to_s
+    begin
+        c_temp.validate!
+        f_temp = c_temp.to_fahrenheit
+        f_temp.validate!
+        @f_entry.text = f_temp.value.to_s
+        k_temp = c_temp.to_kelvin
+        k_temp.validate!
+        @k_entry.text = k_temp.value.to_s
+    rescue => e
+        buffer = @text_area.buffer
+        buffer.set_text(e.message)
+    end
 end
 
 def ftoc
     f_temp = Temperature.new(@f_entry.text.to_f, :F)
-    f_temp.validate!
-    c_temp = f_temp.to_celsius
-    c_temp.validate!
-    @c_entry.text = c_temp.value.to_s
-    k_temp = c_temp.to_kelvin
-    k_temp.validate!
-    @k_entry.text = k_temp.value.to_s
+    begin
+        f_temp.validate!
+        c_temp = f_temp.to_celsius
+        c_temp.validate!
+        @c_entry.text = c_temp.value.to_s
+        k_temp = c_temp.to_kelvin
+        k_temp.validate!
+        @k_entry.text = k_temp.value.to_s
+    rescue => e
+        buffer = @text_area.buffer
+        buffer.set_text(e.message)
+    end
 end
