@@ -34,6 +34,7 @@ def setup_builder
 
     @c_entry = builder.get_object('celsius')
     @f_entry = builder.get_object("fahrenheit")
+    @k_entry = builder.get_object("kelvin")
 
     window.show_all
 end
@@ -41,11 +42,21 @@ end
 def ctof
     c_temp = Temperature.new(@c_entry.text.to_f, :C)
     c_temp.validate!
-    @f_entry.text = c_temp.to_fahrenheit.value.to_s
+    f_temp = c_temp.to_fahrenheit
+    f_temp.validate!
+    @f_entry.text = f_temp.value.to_s
+    k_temp = c_temp.to_kelvin
+    k_temp.validate!
+    @k_entry.text = k_temp.value.to_s
 end
 
 def ftoc
     f_temp = Temperature.new(@f_entry.text.to_f, :F)
     f_temp.validate!
-    @c_entry.text = f_temp.to_celsius.value.to_s
+    c_temp = f_temp.to_celsius
+    c_temp.validate!
+    @c_entry.text = c_temp.value.to_s
+    k_temp = c_temp.to_kelvin
+    k_temp.validate!
+    @k_entry.text = k_temp.value.to_s
 end

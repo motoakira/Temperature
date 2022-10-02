@@ -57,6 +57,10 @@ class Temperature < Object
             if self.value < ABS_Z_F.value
                 raise MSG_LESS_THAN_ZERO
             end
+        elsif self.unit == :K
+            if @value < 0
+                raise MSG_LESS_THAN_ZERO
+            end
         elsif self.unit != :C
             raise MSG_ILLEGAL_UNIT
         else
