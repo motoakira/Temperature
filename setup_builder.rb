@@ -42,6 +42,8 @@ def setup_builder
 end
 
 def ctof
+    buffer = @text_area.buffer
+    buffer.set_text("")
     c_temp = Temperature.new(@c_entry.text.to_f, :C)
     begin
         c_temp.validate!
@@ -52,12 +54,15 @@ def ctof
         k_temp.validate!
         @k_entry.text = k_temp.value.to_s
     rescue => e
-        buffer = @text_area.buffer
         buffer.set_text(e.message)
+        @f_entry.text = ""
+        @k_entry.text = ""
     end
 end
 
 def ftoc
+    buffer = @text_area.buffer
+    buffer.set_text("")
     f_temp = Temperature.new(@f_entry.text.to_f, :F)
     begin
         f_temp.validate!
@@ -68,7 +73,8 @@ def ftoc
         k_temp.validate!
         @k_entry.text = k_temp.value.to_s
     rescue => e
-        buffer = @text_area.buffer
         buffer.set_text(e.message)
+        @c_entry.text = ""
+        @k_entry.text = ""
     end
 end
