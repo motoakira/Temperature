@@ -1,6 +1,6 @@
 require_relative('Temperature')
 
-def setup_builder
+def setup_builder(app)
     #/* Construct a GtkBuilder instance and load our UI description */
     #builder = gtk_builder_new ();
     builder = Gtk::Builder.new
@@ -18,7 +18,10 @@ def setup_builder
     #/* Connect signal handlers to the constructed widgets. */
     window = builder.get_object("window")
     window.signal_connect("destroy") do
-        Gtk.main_quit
+        app.quit
+    end
+    window.signal_connect("close-request") do
+        app.quit
     end
 
     grid = builder.get_object("grid")
@@ -30,7 +33,7 @@ def setup_builder
     button.signal_connect("clicked") { ftoc }
 
     button = builder.get_object("quit")
-    button.signal_connect("clicked") { Gtk.main_quit }
+    button.signal_connect("clicked") { app.quit }
 
     @c_entry = builder.get_object('celsius')
     @f_entry = builder.get_object("fahrenheit")
@@ -38,7 +41,7 @@ def setup_builder
 
     @text_area = builder.get_object("text_area")
 
-    window.show_all
+    return window
 end
 
 def ctof
