@@ -1,0 +1,9 @@
+.GtkEntry {
+    color: green;
+    background-color: yellow;
+/*    text-align: right; */
+}
+
+#CtoF {
+    color: blue;
+}

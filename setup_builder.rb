@@ -36,8 +36,11 @@ def setup_builder(app)
     button.signal_connect("clicked") { app.quit }
 
     @c_entry = builder.get_object('celsius')
+    @c_entry.set_alignment(1.0) # text-align: right;
     @f_entry = builder.get_object("fahrenheit")
+    @f_entry.set_alignment(1.0) # text-align: right;
     @k_entry = builder.get_object("kelvin")
+    @k_entry.set_alignment(1.0) # text-align: right;
 
     @text_area = builder.get_object("text_area")
 
