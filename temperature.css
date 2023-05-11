@@ -1,9 +1,9 @@
-.GtkEntry {
+entry {
     color: green;
-    background-color: yellow;
+    background-color: rgb(252, 229, 218);
 /*    text-align: right; */
 }
 
-#CtoF {
+button {
     color: blue;
 }

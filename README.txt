@@ -6,3 +6,5 @@
 実行方法
 % ruby temp_conv.rb
 
+ライセンスは、Creative Commons(CC BY)とします。
+
