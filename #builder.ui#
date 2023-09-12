@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.0"/>
+  <object class="GtkWindow" id="window">
+    <property name="height-request">8</property>
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">10</property>
+    <property name="title">Temperature Converter</property>
+    <child>
+      <!-- n-columns=4 n-rows=6 -->
+      <object class="GtkGrid" id="grid">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="column-spacing">10</property>
+        <child>
+          <object class="GtkEntry" id="celsius">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <layout>
+            <property name="left-attach">0</property>
+            <property name="top-attach">1</property>
+            <property name="width">2</property>
+          </layout>
+        </child>
+        <child>
+          <object class="GtkLabel" id="C">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label">℃</property>
+          </object>
+          <layout>
+            <property name="left-attach">2</property>
+            <property name="top-attach">1</property>
+          </layout>
+        </child>
+        <child>
+          <object class="GtkEntry" id="fahrenheit">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <layout>
+            <property name="left-attach">0</property>
+            <property name="top-attach">3</property>
+            <property name="width">2</property>
+          </layout>
+        </child>
+        <child>
+          <object class="GtkLabel" id="F">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label">℉</property>
+          </object>
+          <layout>
+            <property name="left-attach">2</property>
+            <property name="top-attach">3</property>
+          </layout>
+        </child>
+        <child>
+          <object class="GtkButton" id="CtoF">
+            <property name="label">↓</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="receives-default">False</property>
+          </object>
+          <layout>
+            <property name="left-attach">0</property>
+            <property name="top-attach">2</property>
+          </layout>
+        </child>
+        <child>
+          <object class="GtkButton" id="FtoC">
+            <property name="label">↑</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="receives-default">False</property>
+          </object>
+          <layout>
+            <property name="left-attach">1</property>
+            <property name="top-attach">2</property>
+          </layout>
+        </child>
+        <child>
+          <object class="GtkButton" id="quit">
+            <property name="label">Quit</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="receives-default">False</property>
+          </object>
+          <layout>
+            <property name="left-attach">0</property>
+            <property name="top-attach">5</property>
+            <property name="width">2</property>
+          </layout>
+        </child>
+        <child>
+          <object class="GtkLabel" id="kelvin">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">0</property>
+            <property name="justify">right</property>
+          </object>
+          <layout>
+            <property name="left-attach">0</property>
+            <property name="top-attach">0</property>
+            <property name="width">2</property>
+          </layout>
+        </child>
+        <child>
+          <object class="GtkLabel" id="K">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">K</property>
+          </object>
+          <layout>
+            <property name="left-attach">2</property>
+            <property name="top-attach">0</property>
+          </layout>
+        </child>
+        <child>
+          <object class="GtkTextView">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <layout>
+            <property name="left-attach">0</property>
+            <property name="top-attach">4</property>
+            <property name="width">2</property>
+            <property name="height">2</property>
+          </layout>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

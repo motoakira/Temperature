@@ -42,7 +42,7 @@ def setup_builder(app)
     @k_entry = builder.get_object("kelvin")
     @k_entry.set_alignment(1.0) # text-align: right;
 
-    @text_area = builder.get_object("text_area")
+    @text_area = builder["text_area"]
 
     return window
 end
